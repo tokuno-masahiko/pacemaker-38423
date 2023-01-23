@@ -13,7 +13,7 @@
 ### Association
 
 - has_many : comments
-- has_one  : pacemaker
+- has_one  : product
 
 ## comments テーブル
 
@@ -26,7 +26,7 @@
 
 - belongs_to : user
 
-## pacemakers テーブル
+## products テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
