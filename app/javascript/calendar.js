@@ -1,45 +1,4 @@
-<div class="contents row">
-  <p><%= @name %>さん</p>
-    <div class="content_post" style="background-image: url(<%= @product.image %>);">
-      <h1><%= @product.item %></h1>
-      <h2><%= @product.battery %></h2>
-      <p><%= @product.maker %></p>
-      <span class="name"><%= @name %></span>
-    </div>
-</div>
-<div>
-<div>
-  <%= form_with model: @plan, url: user_plans_path(@user.id), method: :post, class: 'form' do |f| %>
-
-<%= render 'shared/error_messages', model: f.object %>
-
-    <%= f.label :日付を選択, class: 'lavel' %>
-    <%= f.date_field :date, class: 'date-select' %>
-    <%= f.label :予定を入力, class: 'lavel' %>
-    <%= f.text_field :plan, class: 'text-input' %>
-    <%= f.submit '保存' %>
-  <% end %>
-</div>
-<div>
-  <div class='calendar'>
-    <% @week_days.each do |day| %>
-      <div class='item'>
-        <div class='date'>
-          <%= day[:month] %>/<%= day[:date] %>
-          <%= day[:wday] %>
-        </div>
-        <ul class='content'>
-        <% if day[:plans].length != 0 %>
-          <% day[:plans].each do |plan| %>
-            <li class='plan-list'>・<%= plan %></li>
-          <% end %>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-  </div>
-</div>
-<%# <script> 'use strict';
+'use strict';
 
 console.clear();
 
@@ -180,6 +139,4 @@ console.clear();
   });
 
   createCalendar();
-}</script>
-
-</div> %>
+}

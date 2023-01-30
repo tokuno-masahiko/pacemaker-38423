@@ -4,4 +4,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :product
+  has_many :plans
 end

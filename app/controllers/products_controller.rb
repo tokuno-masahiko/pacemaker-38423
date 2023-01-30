@@ -15,8 +15,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  
-
   private
   def product_params
     params.require(:product).permit(:image, :maker, :item, :battery).merge(user_id: current_user.id)
