@@ -10,12 +10,21 @@
   </head>
 
   <body>
-  <div class = "pace">
-    <%= link_to "pacemaker", "/" %>
+  <div class = "pacemaker">
+   <div class = "pace">
+    <%= link_to "PaceMaker", "/" %>
+   </div>
+   <div class="monitor">
+    <p>Home Monitaring Service</p>
+   </div>
   </div>
-  <div class = "monitor">
-    <%= link_to "Home Monitaring Service", "/" %>
-  </div>
+  <div class="main_wrapper">
     <%= yield %>
+  </div>
+  <footer>
+  <div class="footer_logo">
+  Copyright Pacemaker 2023.
+  </div>
+ </footer>
   </body>
 </html>

@@ -1,26 +1,42 @@
-<div class="contents row">
-  <p><%= @name %>さん</p>
-    <div class="content_post" style="background-image: url(<%= @product.image %>);">
-      <h1><%= @product.item %></h1>
-      <h2><%= @product.battery %></h2>
-      <p><%= @product.maker %></p>
-      <span class="name"><%= @name %></span>
-    </div>
-</div>
-<div>
-<div>
-  <%= form_with model: @plan, url: user_plans_path(@user.id), method: :post, class: 'form' do |f| %>
+<div class="contents_row">
+ <div class="contents_flex">
+  <div class="show_list">
+   製品画像<br>
+  </div>
+    <%= image_tag @product.image, class: "product-img" %>
 
-<%= render 'shared/error_messages', model: f.object %>
+    <div class="show_list">
+    氏名<br>
+    </div>
+    <p class = "show__list"><%= @name %></p>
+    <div class="show_list">
+    残バッテリー年数<br>
+    </div>
+      <p class = "show__list"><%= "#{@product.battery}年" %></p>
+    <div class="show_list">
+    製品名<br>
+    </div>
+      <p class = "show__list"><%= @product.item %></p>
+    <div class="show_list">
+    メーカー<br>
+    </div>
+    <div>
+      <p class = "show__list"><%= @product.maker %></p>
+    </div>
+ </div>
+ <div class="contents_flex">
+  <div class = "show_calendar">
+   <%= form_with model: @plan, url: user_plans_path(@user.id), method: :post, class: 'form' do |f| %>
+
+   <%= render 'shared/error_messages', model: f.object %>
 
     <%= f.label :日付を選択, class: 'lavel' %>
     <%= f.date_field :date, class: 'date-select' %>
     <%= f.label :予定を入力, class: 'lavel' %>
     <%= f.text_field :plan, class: 'text-input' %>
     <%= f.submit '保存' %>
-  <% end %>
-</div>
-<div>
+   <% end %>
+  </div>
   <div class='calendar'>
     <% @week_days.each do |day| %>
       <div class='item'>
@@ -38,6 +54,7 @@
       </div>
     <% end %>
   </div>
+ </div>
 </div>
 <%# <script> 'use strict';
 

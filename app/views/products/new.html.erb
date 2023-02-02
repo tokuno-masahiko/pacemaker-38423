@@ -1,15 +1,26 @@
 <div class="contents row">
-  <div class="container">
-    <h3>投稿する</h3>
+  <div class="container_new">
+    <h3>機器投稿画面</h3>
       <%= form_with(model: @product, local: true) do |form| %>
-
-      <%= form.label :image, "プロトタイプの画像" %><br />
+      <div class = "new_product">
+      <%= form.label :image, "製品の画像" %><br>
       <%= form.file_field :image %>
-
-      <%= form.text_area :maker, placeholder: "メーカー", rows: "1" %>
-      <%= form.text_area :item, placeholder: "製品名", rows: "2" %>
-      <%= form.number_field :battery, placeholder: "バッテリー年数", rows: "10" %>
+      </div>
+      <div class = "new_product">
+      <%= form.label :maker, "メーカー" %><br>
+      <%= form.text_area :maker, size: "40", rows: "1" %>
+      </div>
+      <div class = "new_product">
+      <%= form.label :item, "製品名" %><br>
+      <%= form.text_area :item, size: "40", rows: "2" %>
+      </div>
+      <div class = "new_product">
+      <%= form.label :battery, "バッテリー年数" %><br>
+      <%= form.number_field :battery, size: "50", rows: "10" %><br>
+      <div class="product_submit">
       <%= form.submit "SEND" %>
+      </div>
+      </div>
     <% end %>
   </div>
 </div>

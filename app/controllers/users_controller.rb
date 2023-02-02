@@ -23,9 +23,9 @@ class UsersController < ApplicationController
 
     @week_days = []
 
-    plans = Plan.where(date: @todays_date..@todays_date + 30)
+    plans = Plan.where(date: @todays_date..@todays_date + 28)
 
-    30.times do |x|
+    28.times do |x|
       today_plans = []
       plans.each do |plan|
         today_plans.push(plan.plan) if plan.date == @todays_date + x
