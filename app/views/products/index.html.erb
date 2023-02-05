@@ -1,0 +1,35 @@
+ <header class="header">
+      <div class="header_image">
+      </div>
+        <% if user_signed_in? %>
+      <div class="user_nav grid-6">
+          <div class="user_name">
+          <span><%= "#{current_user.name}さんのページを閲覧しています" %>
+          </div>
+            <ul class="user__info">
+              <li>
+              <div class="a_tag">
+                <%= link_to "マイページ", user_path(current_user.id) %>
+              </div>
+              <div class="b_tag">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </div>
+              </li>
+            </ul>
+          </span>
+          <div class="c_tag">
+            <%= link_to "機器登録", new_product_path, class: "post" %>
+          </div>
+          </div>
+        <% else %>
+          <div class="grid-6">
+          <div class="d_tag">
+            <%= link_to "ログイン", new_user_session_path, class: "post" %>
+          </div>
+          <div class="e_tag">
+            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+         </div>
+        </div>
+        <% end %>
+      </div>
+ </header>
