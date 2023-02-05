@@ -26,9 +26,7 @@
  </div>
  <div class="contents_flex">
   <div class = "show_calendar">
-   <%= form_with model: @plan, url: user_plans_path(@user.id), method: :post, class: 'form' do |f| %>
-
-   <%= render 'shared/error_messages', model: f.object %>
+   <%= form_with model: @plan, local: true, url: user_plans_path(@user.id), method: :post, class: 'form' do |f| %>
 
     <%= f.label :日付を選択, class: 'lavel' %>
     <%= f.date_field :date, class: 'date-select' %>
