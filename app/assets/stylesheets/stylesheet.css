@@ -36,7 +36,7 @@ header {
 .header_image {
   width: 100%;
   height: 100%;
-  /* background-image: url("pacemaker01.jpg"); */
+  background-image: url("pacemaker01.jpg");
   opacity: 0.3;
 }
 
@@ -118,7 +118,7 @@ header a {
   border: 1px solid rgb(0, 0, 0);
   width: 8vw;
   height: auto;
-  background-color: rgb(246, 253, 255);
+  background-color: rgb(254, 254, 254);
 }
 
 .date {
@@ -202,10 +202,19 @@ h2 {
   margin: 10px 0 20px 0;
 }
 
-footer {
-  display: block;
-  text-align: center;
-  height: 50px;
-  padding-top: 20px;
+ body {
+  min-height: 100vh;
+  position: relative;/*←相対位置*/
+  padding-bottom: 50px;/*←footerの高さ*/
+  box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}
+
+footer{
+  width: 100%;
   background-color: rgb(199, 230, 240);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
 }
