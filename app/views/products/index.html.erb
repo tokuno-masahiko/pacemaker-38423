@@ -1,10 +1,10 @@
  <header class="header">
-      <div class="header_image">
-      </div>
+  <div class="header_image">
+   <div class="header_img">
         <% if user_signed_in? %>
       <div class="user_nav grid-6">
           <div class="user_name">
-          <span><%= "#{current_user.name}さんのページを閲覧しています" %>
+          <%= "#{current_user.name}が閲覧しています" %>
           </div>
             <ul class="user__info">
               <li>
@@ -16,13 +16,22 @@
               </div>
               </li>
             </ul>
-          </span>
-          <div class="c_tag">
-            <%= link_to "機器登録", new_product_path, class: "post" %>
           </div>
+          <div class="user__name">
+           登録ユーザ 一覧
           </div>
+          <div class="user_each">
+            <% @users.each do |user|%>
+            <div class="all_user">
+            <li>
+             <%= link_to user.name, user_path(user.id) %>
+            </li>
+            </div>
+          </div>
+          <% end %>
         <% else %>
-          <div class="grid-6">
+          </div>
+          <div class="grid-7">
           <div class="d_tag">
             <%= link_to "ログイン", new_user_session_path, class: "post" %>
           </div>
@@ -32,4 +41,6 @@
         </div>
         <% end %>
       </div>
+    </div>
+  </div>
  </header>

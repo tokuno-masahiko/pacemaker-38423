@@ -2,7 +2,7 @@ class PlansController < ApplicationController
   def create
     @plan = Plan.new(plan_params)
     if @plan.save
-      redirect_to root_path
+      redirect_to user_path(@plan.user.id)
     else
       render :show
     end

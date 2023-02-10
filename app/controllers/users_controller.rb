@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   def show
-    @name = current_user.name
-    @product = current_user.product
+    @product = Product.find(params[:id])
     getWeek
     @plan = Plan.new
     @user = User.find(params[:id])
+    @users = User.all
   end
 
 
