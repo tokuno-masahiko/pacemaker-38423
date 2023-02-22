@@ -3,12 +3,15 @@
   <div class="show_list">
    製品画像<br>
   </div>
+  
     <%= image_tag @product.image, class: "product-img" if @product.image.attached? %>
-    <% if current_user.id == @product.user_id %>
-  <div class="c_tag">
+    <% if adminn_signed_in? %>
+    <div class="c_tag">
     <%= link_to "機器登録", new_product_path, class: "post" %>
+    <%= link_to "機器編集", edit_product_path(@product.id), class: "post" %>
+    
   </div>
-  <% end %>
+    <% end %>
     <div class="show_list">
     氏名<br>
     </div>
