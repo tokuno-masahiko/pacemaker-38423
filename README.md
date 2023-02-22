@@ -8,46 +8,48 @@
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
 | address            | text   | null: false               |
-| tel                | integer| null: false               |
+| tel                | string | null: false               |
 
 ### Association
 
 - has_many : comments
 - has_one  : product
 
-## comments テーブル
+## adminns テーブル
 
-| Column    | Type      | Options                        |
-| --------- | --------- | ------------------------------ |
-| content   | text      | null: false                    |
-| user      | reference | null: false, foreign_key: true |
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------  |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
 
 ### Association
 
-- belongs_to : user
+- has_one  : plan
+
 
 ## products テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| title            | string     | null: false                    |
 | maker            | integer    | null: false                    |
+| item             | string     | null: false                    |
 | battery          | date       | null: false                    |
-| trouble          | text       | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 
-## category テーブル
+## plans テーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
-| genre_id        | integer    | null: false                    |
+| plan            | integer    | null: false                    |
+| date            | date       | null: false                    |
 | user            | references | null: false, foreign_key: true |
 
 
 ### Association
 
 - belongs_to :user
+- belongs_to :adminn

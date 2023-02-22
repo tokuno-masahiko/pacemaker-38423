@@ -15,6 +15,10 @@
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
               </div>
               </li>
+          <% elsif adminn_signed_in? %>
+          <div class="b_tag">
+                <%= link_to "ログアウト", destroy_adminn_session_path, method: :delete %>
+              </div>
             </ul>
           </div>
           <div class="user__name">
@@ -33,7 +37,8 @@
           </div>
           <div class="grid-7">
           <div class="d_tag">
-            <%= link_to "ログイン", new_user_session_path, class: "post" %>
+            <%= link_to "ユーザーログイン", new_user_session_path, class: "post" %>
+            <%= link_to "施設ログイン", new_adminn_session_path, class: "post" %>
           </div>
           <div class="e_tag">
             <%= link_to "新規登録", new_user_registration_path, class: "post" %>

@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  def add_index
+  end
+
   def show
     @product = Product.find(params[:id])
     getWeek
