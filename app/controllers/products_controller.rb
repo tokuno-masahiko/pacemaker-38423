@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to root_path
+      redirect_to user_path(@product.user_id)
     else
       render :edit
     end
@@ -31,6 +31,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:image, :maker, :item, :battery).merge(user_id: params[:user_id])
+    params.require(:product).permit(:image, :maker, :item, :battery).merge(user_id: current_adminn.id)
   end
 end

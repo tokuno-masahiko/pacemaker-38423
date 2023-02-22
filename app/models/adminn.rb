@@ -5,4 +5,5 @@ class Adminn < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :plans
+
 end
