@@ -57,6 +57,7 @@ group :production do
   gem 'pg'
 end
 
+
 gem 'mail', '2.7.1'
 gem 'devise'
 gem 'mini_magick'
