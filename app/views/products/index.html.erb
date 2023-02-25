@@ -15,8 +15,10 @@
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
               </div>
               </li>
+            </ul>
           <% elsif adminn_signed_in? %>
-          <div class="b_tag">
+          <ul class="user__info">
+              <div class="b_tag">
                 <%= link_to "ログアウト", destroy_adminn_session_path, method: :delete %>
               </div>
             </ul>
@@ -25,14 +27,14 @@
            登録ユーザ 一覧
           </div>
           <div class="user_each">
-            <% @users.each do |user|%>
             <div class="all_user">
+            <% @users.each do |user|%>
             <li>
              <%= link_to user.name, user_path(user.id) %>
             </li>
+            <% end %>
             </div>
           </div>
-          <% end %>
         <% else %>
           </div>
           <div class="grid-7">

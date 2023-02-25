@@ -1,18 +1,18 @@
 <div class="contents_row">
  <div class="contents_flex">
+  
+
+  <% if @user.product.present? %>
   <div class="show_list">
    製品画像<br>
   </div>
-  
-    <%= image_tag @product.image, class: "product-img" if @product.image.attached? %>
     <% if adminn_signed_in? %>
     <div class="c_tag">
-    <%= link_to "機器登録", new_product_path, class: "post" %>
-    <%= link_to "機器編集", edit_product_path(@product.id), class: "post" %>
-    
-  </div>
-    <% end %>
-    <div class="show_list">
+    <%= link_to "機器編集", edit_user_products_path(@user.id), class: "post" %><br>
+    </div>
+   <% end %>
+    <%= image_tag @product.image, class: "product-img" if @product.image.attached? %>
+   <div class="show_list">
     氏名<br>
     </div>
     <p class = "show__list"><%= @user.name %></p>
@@ -30,7 +30,15 @@
     <div>
       <p class = "show__list"><%= @product.maker %></p>
     </div>
- </div>
+    </div>
+  <% else %>
+   <% if adminn_signed_in? %>
+    <div class="c_tag">
+    <%= link_to "機器登録", new_user_products_path(@user.id), class: "post" %>
+    </div>
+   <% end %>
+  <% end %>
+  
  <div class="contents_flex">
   <div class = "show_calendar">
    <%= form_with model: @plan, local: true, url: user_plans_path(@user.id), method: :post, class: 'form' do |f| %>
@@ -52,7 +60,7 @@
         <ul class='content'>
         <% if day[:plans].length != 0 %>
           <% day[:plans].each do |plan| %>
-            <li class='plan-list'>・<%= plan %></li>
+            <li class='plan-list'>・ <%= plan %></li>
           <% end %>
         <% end %>
         </ul>

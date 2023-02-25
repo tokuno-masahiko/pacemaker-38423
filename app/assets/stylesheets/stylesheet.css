@@ -84,12 +84,15 @@ header {
 
 .user_each {
 padding-top: 190px;
-
 }
 
 .all_user {
   padding-top: 10px;
   padding-left: 80px;
+}
+
+.all_user li {
+  padding: 10px;
 }
 
 .all_user a{

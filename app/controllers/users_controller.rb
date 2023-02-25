@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find_by(params[:id])
     getWeek
     @plan = Plan.new
     @user = User.find(params[:id])
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   private
 
   def plan_params
-    params.require(:plan).permit(:date, :plan)
+    params.require(:plan).permit(:date, :plan).merge(user_id: params[:user_id])
   end
 
   def getWeek
