@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @product = Product.find_by(params[:id])
+    @product = Product.find(params[:id])
     getWeek
     @plan = Plan.new
     @user = User.find(params[:id])

@@ -18,15 +18,15 @@ class ProductsController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @product = Product.find_by(params[:id])
+    @product = Product.find(params[:user_id])
   end
 
   def edit
-    @product = Product.find_by(params[:id])
+    @product = Product.find(params[:user_id])
   end
 
   def update
-    @product = Product.find_by(params[:id])
+    @product = Product.find(params[:user_id])
     if @product.update(product_params)
       redirect_to user_path(@product.user_id)
     else
