@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
     getWeek
     @plan = Plan.new
     @user = User.find(params[:id])
