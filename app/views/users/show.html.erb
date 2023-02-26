@@ -3,34 +3,17 @@
   
 
   <% if @user.product.present? %>
-  <div class="show_list">
-   製品画像<br>
-  </div>
+  
     <% if adminn_signed_in? %>
     <div class="c_tag">
     <%= link_to "機器編集", edit_user_products_path(@user.id), class: "post" %><br>
     </div>
    <% end %>
-    <%= image_tag @product.image, class: "product-img" if @product.image.attached? %>
-   <div class="show_list">
-    氏名<br>
-    </div>
-    <p class = "show__list"><%= @user.name %></p>
-    <div class="show_list">
-    残バッテリー年数<br>
-    </div>
-      <p class = "show__list"><%= "#{@product.battery}年" %></p>
-    <div class="show_list">
-    製品名<br>
-    </div>
-      <p class = "show__list"><%= @product.item %></p>
-    <div class="show_list">
-    メーカー<br>
-    </div>
-    <div>
-      <p class = "show__list"><%= @product.maker %></p>
-    </div>
-    </div>
+   <div class="c_tag">
+   <br>
+   <%= link_to "機器情報", user_products_path(@user.id), class: "post" %><br>
+   </div>
+    
   <% else %>
    <% if adminn_signed_in? %>
     <div class="c_tag">

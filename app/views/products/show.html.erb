@@ -1,0 +1,23 @@
+<div class="show_list">
+   製品画像<br>
+  </div>
+<%= image_tag @product.image, class: "product-img" if @product.image.attached? %>
+   <div class="show_list">
+    氏名<br>
+    </div>
+    <p class = "show__list"><%= @user.name %></p>
+    <div class="show_list">
+    残バッテリー年数<br>
+    </div>
+      <p class = "show__list"><%= "#{@product.battery}年" %></p>
+    <div class="show_list">
+    製品名<br>
+    </div>
+      <p class = "show__list"><%= @product.item %></p>
+    <div class="show_list">
+    メーカー<br>
+    </div>
+    <div>
+      <p class = "show__list"><%= @product.maker %></p>
+    </div>
+  </div>

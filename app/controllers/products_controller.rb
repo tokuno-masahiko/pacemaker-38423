@@ -16,6 +16,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:user_id])
+    @product = Product.find_by(params[:id])
+  end
+
   def edit
     @product = Product.find_by(params[:id])
   end
