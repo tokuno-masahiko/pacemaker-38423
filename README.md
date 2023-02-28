@@ -49,6 +49,7 @@ https://pacemaker-38423.onrender.com
 ・施設側でログイン後、登録ユーザー一覧ページに遷移する
 [label](https://gyazo.com/2854ba0b5508454e389e6927880b95e7)
 
+
 ・機器登録済みのユーザーには機器編集・機器登録ボタンが表示され、未登録ユーザーには機器登録ボタンが表示される
 [label](https://gyazo.com/57ce78416172a1f4606edd79260fa956)
 
