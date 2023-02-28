@@ -72,7 +72,7 @@ https://pacemaker-38423.onrender.com
 
 # 画面遷移図
 
-(https://gyazo.com/ac77696fa06acd70ad41f485f7238193)
+(https://gyazo.com/ac77696fa06acd70ad41f485f7238193.mp4)
 
 # 開発環境
 ・フロントエンド
