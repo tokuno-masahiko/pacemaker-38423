@@ -59,16 +59,20 @@ https://pacemaker-38423.onrender.com
 [label](https://gyazo.com/16c300713d029f933fdfa8b0a00d3999)
 
 ・日付、予定を入力し保存するとカレンダーに反映される。
+[label](https://gyazo.com/93a76252d47b7d7c6fddc51eacec8722)
 
 # 実装予定の機能
 来院時の予定を変更したい時や質問などをできるようにチャット機能を実装予定。
-[label](https://gyazo.com/93a76252d47b7d7c6fddc51eacec8722)
+
+
 
 # データベース設計
+
 ![Alt text](https://i.gyazo.com/f24b2b10e993284aa4ac162183dcab2c.png)
 
 # 画面遷移図
-[label](https://gyazo.com/ac77696fa06acd70ad41f485f7238193)
+
+(https://gyazo.com/ac77696fa06acd70ad41f485f7238193)
 
 # 開発環境
 ・フロントエンド
